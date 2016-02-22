@@ -6,6 +6,6 @@ class User < ActiveRecord::Base
   has_many :caravans, dependent: :destroy
   has_many :rentals
 
-  validates :first_name, :last_name, presence: true
-  validates :description, :gender, :street, :city, :zip_code, presence: true
+  # validates :first_name, :last_name, presence: true
+  # validates :description, :gender, :street, :city, :zip_code, presence: true
 end

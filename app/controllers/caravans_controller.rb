@@ -1,0 +1,2 @@
+class CaravansController < ApplicationController
+end
