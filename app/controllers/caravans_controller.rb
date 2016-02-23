@@ -1,4 +1,5 @@
 class CaravansController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_caravan, only: [:show, :edit, :update]
   before_action :find_user, only: [:create, :new, :show_own, :index_own, :edit, :update, :destroy]
   before_action :user_caravan, only: [:show_own, :edit, :destroy]
