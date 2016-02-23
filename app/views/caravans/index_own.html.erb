@@ -1,0 +1,10 @@
+<h1>All my caravans</h1>
+<% @caravans.each do |caravan| %>
+<%= link_to caravan.title, user_own_caravan_path(@user, caravan.id) %>
+<%= link_to "- Delete", user_own_caravan_path(@user, caravan.id),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<br>
+<% end %>
+<br>
+<%= link_to "Back to my profile", user_path(@user), class:"btn btn-primary" %>

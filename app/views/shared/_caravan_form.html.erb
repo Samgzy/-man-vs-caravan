@@ -1,4 +1,4 @@
-<%= simple_form_for @caravan do |f| %>
+<%= simple_form_for [@user, @caravan] do |f| %>
   <%= f.input :title %>
   <%= f.input :description, as: :text %>
   <%= f.input :capacity %>
@@ -6,7 +6,7 @@
   <%= f.input :street %>
   <%= f.input :city %>
   <%= f.input :zip_code %>
-  <%= f.input :country,   collection: [ "Australia", "Brazil", "New Zealand"] %>
+  <%= f.input :country, collection: [ "Australia", "Brazil", "New Zealand"] %>
   <%= f.input :tv %>
   <%= f.input :shower %>
   <%= f.input :coffee_machine %>
