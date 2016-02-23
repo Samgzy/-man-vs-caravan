@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.3.0'
 
 gem 'rails', '4.2.5.1'
-gem 'puma'
 gem 'pg'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
@@ -28,4 +27,5 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'puma'
 end
