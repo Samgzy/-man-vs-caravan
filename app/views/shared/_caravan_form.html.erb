@@ -1,0 +1,31 @@
+<%= simple_form_for @caravan do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description, as: :text %>
+  <%= f.input :capacity %>
+  <%= f.input :price %>
+  <%= f.input :street %>
+  <%= f.input :city %>
+  <%= f.input :zip_code %>
+  <%= f.input :country,   collection: [ "Australia", "Brazil", "New Zealand"] %>
+  <%= f.input :tv %>
+  <%= f.input :shower %>
+  <%= f.input :coffee_machine %>
+  <%= f.input :kitchen %>
+  <%= f.input :wifi %>
+  <%= f.button :submit, "Let's create!" %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
