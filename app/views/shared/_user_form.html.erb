@@ -5,7 +5,7 @@
   <%= f.input :street %>
   <%= f.input :zip_code %>
   <%= f.input :city %>
-  <%= f.input :country %>
+  <%= f.input :country, collection: [ "Australia", "Brazil", "New Zealand"] %>
   <%= f.input :gender, collection: [:male, :female] %>
   <%= f.button :submit %>
 <% end %>

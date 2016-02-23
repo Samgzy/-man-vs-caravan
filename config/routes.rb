@@ -8,10 +8,14 @@ Rails.application.routes.draw do
   get 'pages/about_us'
 
   #users
-  resources :users, only: [:new, :create, :show, :edit, :update]
+  resources :users, only: [:new, :create, :show, :edit, :update] do
+    resources :caravans, only: [ :new, :create, :update, :edit, :destroy]
+    get 'caravans/:id', to: 'caravans#show_own', as: :own_caravan
+    get 'caravans', to: 'caravans#index_own', as: :own_caravans
+  end
 
   #caravans
-  resources :caravans
+  resources :caravans, only: [:show, :index]
 
   #rentals
   resources :rentals, only: [:index, :show, :new, :create, :edit, :update]

@@ -1,0 +1,15 @@
+ <h1><%= @caravan.title %></h1>
+  <%= @caravan.capacity %>
+  <%= @caravan.description %>
+  <%= @caravan.price %>
+  <%= @caravan.street %>
+  <%= @caravan.city %>
+  <%= @caravan.zip_code %>
+  <%= @caravan.country %>
+  <%= @caravan.tv %>
+  <%= @caravan.wifi %>
+  <%= @caravan.shower %>
+  <%= @caravan.coffee_machine %>
+  <%= @caravan.kitchen %>
+<%= link_to "Edit informations", edit_user_caravan_path(@user, @caravan)%>
+<%= link_to "Back to the list", user_own_caravans_path(@user) %>
