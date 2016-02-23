@@ -1,2 +1,87 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('header.jpg');">
+    <%= render 'shared/navbar_home' %>
+    <div class="banner-content">
+      <h1>Man versus Caravan</h1>
+      <p>Rent the wildest caravans to live your life's one true adventure</p>
+      <a href="#search-form" class="banner-arrow floating"><i class="fa fa-angle-double-down"></i></a>
+    </div>
+</div>
+
+<div class="text-center" id="search-form">
+  <h2>Find a caravan</h2>
+  TO DO : create search-form partial
+</div>
+
+<div class="text-center">
+  <h2>Meet some of our caravans</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <%= render 'shared/caravan_cards' %>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <%= render 'shared/caravan_cards' %>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <%= render 'shared/caravan_cards' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <h2>Here's why people love us</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-3">
+        <div class="testimonial">
+          <%= image_tag "hippie", {class: "img-circle testimonial-avatar"}%>
+          <div class="testimonial-description">
+            <blockquote>
+              <p>Summer of love... for real</p>
+              <footer>Bob T.</footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <div class="testimonial">
+          <%= image_tag "indiana_jones", {class: "img-circle testimonial-avatar"}%>
+          <div class="testimonial-description">
+            <blockquote>
+              <p>Best stay of my life</p>
+              <footer>Indiana J.</footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <div class="testimonial">
+          <%= image_tag "denis_b", {class: "img-circle testimonial-avatar"}%>
+          <div class="testimonial-description">
+            <blockquote>
+              <p>Man vs Caravan changed my life</p>
+              <footer>Denis B.</footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <div class="testimonial">
+          <%= image_tag "bear_grylls", {class: "img-circle testimonial-avatar"}%>
+          <div class="testimonial-description">
+            <blockquote>
+              <p>Nothing equals a caravan vacation</p>
+              <footer>Bear G.</footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+
+    </div>
+  </div>
+</div>
+
