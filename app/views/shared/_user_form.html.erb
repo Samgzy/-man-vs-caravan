@@ -1,0 +1,11 @@
+<%= simple_form_for @user do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :description, as: :text %>
+  <%= f.input :street %>
+  <%= f.input :zip_code %>
+  <%= f.input :city %>
+  <%= f.input :country %>
+  <%= f.input :gender, collection: [:male, :female] %>
+  <%= f.button :submit %>
+<% end %>
