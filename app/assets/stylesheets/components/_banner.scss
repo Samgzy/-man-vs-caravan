@@ -6,15 +6,40 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.banner h1 {
-  font-size: 50px;
-  font-weight: bold;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-}
-.banner p {
-  font-size: 20px;
-  font-weight: lighter;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 20px;
+  h1 {
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  }
+  p {
+    font-size: 20px;
+    font-weight: lighter;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+  }
+  .navbar-wagon {
+    box-shadow: none;
+    .navbar-wagon-link {
+      color: white;
+    }
+    .navbar-wagon-link:hover {
+      color: #da552f;
+    }
+    .btn-medium {
+      color: white;
+      border: 1px solid white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .btn-medium:hover {
+      opacity: 1;
+      text-decoration: none;
+      color: #999999;
+      border: 1px solid #999999;
+    }
+    .badge-container {
+      color: white;
+    }
+  }
 }
