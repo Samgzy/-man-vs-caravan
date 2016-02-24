@@ -1,10 +1,22 @@
-<h1>All my caravans</h1>
-<% @caravans.each do |caravan| %>
-<%= link_to caravan.title, user_own_caravan_path(@user, caravan.id) %>
-<%= link_to "- Delete", user_own_caravan_path(@user, caravan.id),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
+<div class="text-center"><h1>All my caravans</h1></div>
+ <div class="container ">
+  <% @caravans.each_slice(3) do |caravans| %>
+    <div class="row">
+     <% caravans.each do |caravan| %>
+    <div class="col-xs-12 col-md-4">
+    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= caravan.photo %>');background-size: cover;">
+    <div class="card-category"></div>
+    <div class="card-description">
+      <h2><%= caravan.description %> </h2>
+    </div>
+      <%= link_to "", user_own_caravan_path(@user,caravan), class: "card-link" %>
+  </div>
+</div>
+  <% end %>
+</div>
+  <% end %>
+</div>
 <br>
-<% end %>
-<br>
-<%= link_to "Back to my profile", user_path(@user), class:"btn btn-primary" %>
+<div class="text-center">
+  <%= link_to "Back to my profile", user_path(@user), class:"btn btn-primary" %>
+</div>

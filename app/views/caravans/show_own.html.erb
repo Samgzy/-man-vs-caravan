@@ -1,7 +1,6 @@
- <h1><%= @caravan.title %></h1>
+<h3><%= @caravan.title  %> <span class="label label-default"><%= @caravan.price %> €</span></h3>
   <%= @caravan.capacity %>
   <%= @caravan.description %>
-  <%= @caravan.price %>
   <%= @caravan.street %>
   <%= @caravan.city %>
   <%= @caravan.zip_code %>
@@ -11,7 +10,7 @@
   <%= @caravan.shower %>
   <%= @caravan.coffee_machine %>
   <%= @caravan.kitchen %>
-  <%= cl_image_tag @caravan.photo %>
+  <%= cl_image_tag @caravan.photo, :width=>300, :height=>300, :crop=>:fill %>
 
 <%= link_to "Edit informations", edit_user_caravan_path(@user, @caravan)%>
 <%= link_to "Back to the list", user_own_caravans_path(@user) %>
