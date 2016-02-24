@@ -1,16 +1,25 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :about_us]
   def home
-    @sample_caravan1 = sample_caravan
-    @sample_caravan2 = sample_caravan
-    until @sample_caravan1 != @sample_caravan2
+    @sample_caravans = []
+    if Caravan.count >= 1
+      @sample_caravan1 = sample_caravan
+      @sample_caravans << @sample_caravan1
+    end
+    if Caravan.count >= 2
       @sample_caravan2 = sample_caravan
+      until @sample_caravan1 != @sample_caravan2
+        @sample_caravan2 = sample_caravan
+        @sample_caravans << @sample_caravan2
+      end
     end
-    @sample_caravan3 = sample_caravan
-    until (@sample_caravan1 != @sample_caravan2) && (@sample_caravan1 != @sample_caravan3) && (@sample_caravan2 != @sample_caravan3)
+    if Caravan.count >= 3
       @sample_caravan3 = sample_caravan
+      until (@sample_caravan1 != @sample_caravan2) && (@sample_caravan1 != @sample_caravan3) && (@sample_caravan2 != @sample_caravan3)
+        @sample_caravan3 = sample_caravan
+        @sample_caravans << @sample_caravan3
+      end
     end
-    @sample_caravans = [@sample_caravan1, @sample_caravan2, @sample_caravan3]
     render layout: 'home'
   end
 
