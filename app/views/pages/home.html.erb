@@ -12,18 +12,21 @@
   TO DO : create search-form partial
 </div>
 
-<div class="text-center">
-  <h2>Meet some of our caravans</h2>
-  <div class="container">
-    <div class="row">
-      <% @sample_caravans.each do |caravan| %>
-        <div class="col-xs-12 col-sm-4">
-          <%= render 'shared/caravan_cards', caravan: caravan %>
-        </div>
-      <% end %>
+<% if @sample_caravans.count >= 1 %>
+  <div class="text-center">
+    <h2>Meet some of our caravans</h2>
+    <div class="container">
+      <div class="row">
+        <% @sample_caravans.each do |caravan| %>
+          <div class="col-xs-12 col-sm-4">
+            <%= render 'shared/caravan_cards', caravan: caravan %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
+
 
 <div class="text-center">
   <h2>Here's why people love us</h2>
