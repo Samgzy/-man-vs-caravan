@@ -20,11 +20,17 @@
 }
 
 /* Navbar logo */
-.navbar-wagon-brand img {
-  width: 50px;
-  color: white;
+.navbar-wagon-brand {
+  g {
+    fill: #000;
+  }
+  &-home g {
+    fill: #FFF;
+  }
+  svg {
+    width: 50px;
+  }
 }
-
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
   display: flex;
