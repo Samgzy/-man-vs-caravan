@@ -10,15 +10,15 @@ class PagesController < ApplicationController
       @sample_caravan2 = sample_caravan
       until @sample_caravan1 != @sample_caravan2
         @sample_caravan2 = sample_caravan
-        @sample_caravans << @sample_caravan2
       end
+      @sample_caravans << @sample_caravan2
     end
     if Caravan.count >= 3
       @sample_caravan3 = sample_caravan
       until (@sample_caravan1 != @sample_caravan2) && (@sample_caravan1 != @sample_caravan3) && (@sample_caravan2 != @sample_caravan3)
         @sample_caravan3 = sample_caravan
-        @sample_caravans << @sample_caravan3
       end
+      @sample_caravans << @sample_caravan3
     end
     render layout: 'home'
   end
