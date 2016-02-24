@@ -5,7 +5,9 @@
   <%= f.input :street %>
   <%= f.input :zip_code %>
   <%= f.input :city %>
-  <%= f.input :country, collection: [ "Australia", "Brazil", "New Zealand"] %>
+  <%= f.input :country, collection: [ "Australia", "Brazil", "New Zealand", "France", "USA"] %>
   <%= f.input :gender, collection: [:male, :female] %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
   <%= f.button :submit %>
 <% end %>
