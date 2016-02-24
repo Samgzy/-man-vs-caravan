@@ -17,6 +17,7 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'cloudinary'
 gem 'carrierwave'
+gem 'country_select'
 
 group :development, :test do
   gem 'binding_of_caller'
