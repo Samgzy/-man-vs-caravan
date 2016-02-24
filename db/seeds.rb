@@ -7,16 +7,16 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 @user = User.new ({
-  email: "thomas.naude@gmail.com",
-  first_name: "Thomas",
-  last_name: "Naude",
+  email: "bear.grylls@gmail.com",
+  first_name: "Bear",
+  last_name: "Grylls",
   description: "J'aime les caravanes !",
   street: "24 rue Brizard",
   city: "Bordeaux",
   zip_code: "33000",
   country: "France",
   gender: "male",
-  photo: "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAPvAAAAJDQ2OTcxODQ3LTM5OTQtNDk5MS1hMTliLTM2ZGQxN2RhNTY4Nw.jpg",
+  photo: "images/bear_grylls.jpg",
   password: "azertyui",
   password_confirmation: "azertyui"
 })
