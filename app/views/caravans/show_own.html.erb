@@ -11,5 +11,7 @@
   <%= @caravan.shower %>
   <%= @caravan.coffee_machine %>
   <%= @caravan.kitchen %>
+  <%= cl_image_tag @caravan.photo %>
+
 <%= link_to "Edit informations", edit_user_caravan_path(@user, @caravan)%>
 <%= link_to "Back to the list", user_own_caravans_path(@user) %>
