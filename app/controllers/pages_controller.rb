@@ -11,6 +11,7 @@ class PagesController < ApplicationController
       @sample_caravan3 = sample_caravan
     end
     @sample_caravans = [@sample_caravan1, @sample_caravan2, @sample_caravan3]
+    render layout: 'home'
   end
 
   def about_us
