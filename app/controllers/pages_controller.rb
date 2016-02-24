@@ -19,6 +19,6 @@ class PagesController < ApplicationController
 
   private
   def sample_caravan
-    Caravan.find((1..Caravan.count).to_a.sample)
+    Caravan.all.sample
   end
 end
