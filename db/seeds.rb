@@ -6,6 +6,22 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+@user = User.new ({
+  email: "thomas.naude@gmail.com",
+  first_name: "Thomas",
+  last_name: "Naude",
+  description: "J'aime les caravanes !",
+  street: "24 rue Brizard",
+  city: "Bordeaux",
+  zip_code: "33000",
+  country: "France",
+  gender: "male",
+  photo: "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAPvAAAAJDQ2OTcxODQ3LTM5OTQtNDk5MS1hMTliLTM2ZGQxN2RhNTY4Nw.jpg",
+  password: "azertyui",
+  password_confirmation: "azertyui"
+})
+@user.save
+
 @caravan = Caravan.new ({
   street: "17 place de la bourse",
   city: "Bordeaux",
