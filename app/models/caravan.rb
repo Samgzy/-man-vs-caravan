@@ -6,4 +6,6 @@ class Caravan < ActiveRecord::Base
   validates :title, presence: true, length: { minimum: 10 }
   validates :street, :city, :zip_code, :country, :capacity, :price, :description, presence: true
   validates :tv, :shower, :coffee_machine, :kitchen, :wifi, inclusion: { in: [true, false] }
+
+  mount_uploader :photo, PhotoUploader
 end
