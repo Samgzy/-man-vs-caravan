@@ -6,6 +6,11 @@ class CaravansController < ApplicationController
 
   def index
     @caravans = Caravan.all
+
+    @markers = Gmaps4rails.build_markers(@caravans) do |caravan, marker|
+      marker.lat caravan.latitude
+      marker.lng caravan.longitude
+    end
   end
 
   def index_own

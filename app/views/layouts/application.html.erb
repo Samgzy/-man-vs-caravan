@@ -13,8 +13,11 @@
     <%= render 'shared/flashes' %>
     <div class="Site-content">
       <%= yield %>
-    <%= javascript_include_tag 'application' %>
     </div>
     <%= render 'shared/footer' %>
+    <%= javascript_include_tag "https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyAeZdPcqmzyqBa9cdySVDs2TjFpji7bdTc" %>
+    <%= javascript_include_tag "https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" %>
+    <%= javascript_include_tag "application" %>
+    <%= yield(:after_js) %>
   </body>
 </html>
