@@ -2,7 +2,7 @@
 <%= cl_image_tag caravan.photo, :height=>222, :crop=>:thumb, class: "card-image" %>
   <div class="card-price inline"><%= caravan.price.to_s + "€" %></div>
   <div class="card-description">
-    <h2><%= caravan.title %></h2>
+    <h3><%= caravan.title %></h3>
     <p><%= caravan.city %></p>
   </div>
   <%= cl_image_tag caravan.user.photo, :radius=>"max", :width=>30, :height=>30, :crop=>:thumb, :gravity=>:face, class: "card-user avatar" %>
