@@ -7,6 +7,11 @@ class CaravansController < ApplicationController
   def index
     @caravans = Caravan.all
 
+    @search = params[:search][:address]
+    @radius = params[:search][:radius]
+
+    @caravans = @caravans.near(@search, @radius) if @search.present? && @radius.present?
+
     @markers = Gmaps4rails.build_markers(@caravans) do |caravan, marker|
       marker.lat caravan.latitude
       marker.lng caravan.longitude
