@@ -3,4 +3,5 @@
   <%= rental.start_date %>
   <%= rental.end_date %>
   <%= rental.price %>
+  <%= link_to "Delete", rental_path(rental), method: :delete %>
 <% end %>

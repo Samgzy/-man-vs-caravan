@@ -1,6 +1,6 @@
 class RentalsController < ApplicationController
   before_action :find_caravan, only: [:new, :create]
-  before_action :set_rental, only: [:show]
+  before_action :set_rental, only: [:show, :destroy]
 
   def index
     @rentals = current_user.rentals.all

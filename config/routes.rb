@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     # get 'rentals', to: 'rentals#index', as: :caravan_rentals
   end
 
+  resources :rentals, only: :destroy
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
