@@ -9,16 +9,18 @@ Rails.application.routes.draw do
 
   #users
   resources :users, only: [:new, :create, :show, :edit, :update] do
-    resources :caravans, only: [ :new, :create, :update, :edit, :destroy]
+    resources :caravans, only: [:new, :create, :update, :edit, :destroy]
     get 'caravans/:id', to: 'caravans#show_own', as: :own_caravan
     get 'caravans', to: 'caravans#index_own', as: :own_caravans
+    resources :rentals, only: [:index, :show]
   end
 
   #caravans
-  resources :caravans, only: [:show, :index]
+  resources :caravans, only: [:show, :index] do
+    resources :rentals, only: [:new, :create]
+  end
 
-  #rentals
-  resources :rentals, only: [:index, :show, :new, :create, :edit, :update]
+  resources :rentals, only: :destroy
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
