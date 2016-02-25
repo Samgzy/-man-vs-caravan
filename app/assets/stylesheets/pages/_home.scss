@@ -6,7 +6,6 @@
   width: 100px;
   background-size: contain !important;
 }
-
 // Animations
 .floating{
   animation-name: floating;
@@ -18,7 +17,6 @@
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
 }
-
 @keyframes floating {
   0% {
     transform: translateY(0%);
@@ -30,7 +28,6 @@
     transform: translateY(0%);
   }
 }
-
 @-webkit-keyframes floating {
   0% {
     -webkit-transform: translateY(0%);
@@ -40,5 +37,11 @@
   }
   100% {
     -webkit-transform: translateY(0%);
+  }
+}
+.wrapper {
+  h2 {
+    margin-top: 0px;
+    margin-bottom: 35px;
   }
 }

@@ -7,79 +7,81 @@
     </div>
 </div>
 
-<div class="text-center" id="search-form">
-  <h2>Find a caravan</h2>
-  TO DO : create search-form partial
+<div class="wrapper padded">
+  <div class="text-center" id="search-form">
+    <h2>Find a caravan</h2>
+    TO DO : create search-form partial
+  </div>
 </div>
 
-<% if @sample_caravans.count >= 1 %>
+<div class="wrapper darker-grey padded">
+  <% if @sample_caravans.count >= 1 %>
+    <div class="text-center">
+      <h2>Meet some of our caravans</h2>
+      <div class="container">
+        <div class="row">
+          <% @sample_caravans.each do |caravan| %>
+            <div class="col-xs-12 col-sm-4">
+              <%= render 'shared/caravan_cards', caravan: caravan %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="wrapper padded">
   <div class="text-center">
-    <h2>Meet some of our caravans</h2>
-    <div class="container">
-      <div class="row">
-        <% @sample_caravans.each do |caravan| %>
-          <div class="col-xs-12 col-sm-4">
-            <%= render 'shared/caravan_cards', caravan: caravan %>
+    <h2>Here's why people love us</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-3">
+            <div class="testimonial">
+              <%= cl_image_tag("hippie_n1lxjq.jpg", :width=>100, :height=>100, :crop=>:fill, :gravity=>:face, :effect=>"auto_color", class:"img-circle") %>
+              <div class="testimonial-description">
+                <blockquote>
+                  <p>Summer of love... for real</p>
+                  <footer>Bob T.</footer>
+                </blockquote>
+              </div>
+            </div>
           </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-<% end %>
-
-
-<div class="text-center">
-  <h2>Here's why people love us</h2>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-3">
-        <div class="testimonial">
-          <%= cl_image_tag("hippie_n1lxjq.jpg", :width=>100, :height=>100, :crop=>:fill, :gravity=>:face, :effect=>"auto_color", class:"img-circle") %>
-          <div class="testimonial-description">
-            <blockquote>
-              <p>Summer of love... for real</p>
-              <footer>Bob T.</footer>
-            </blockquote>
+          <div class="col-xs-12 col-sm-3">
+            <div class="testimonial">
+              <%= cl_image_tag("indiana_jones_f5vyy8.jpg", :width=>100, :height=>100, :crop=>:fill, :gravity=>:face, :effect=>"auto_color", class:"img-circle") %>
+              <div class="testimonial-description">
+                <blockquote>
+                  <p>Trust me, best stay of all my life</p>
+                  <footer>Indiana J.</footer>
+                </blockquote>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-3">
-        <div class="testimonial">
-          <%= cl_image_tag("indiana_jones_f5vyy8.jpg", :width=>100, :height=>100, :crop=>:fill, :gravity=>:face, :effect=>"auto_color", class:"img-circle") %>
-          <div class="testimonial-description">
-            <blockquote>
-              <p>Trust me, best stay of all my life</p>
-              <footer>Indiana J.</footer>
-            </blockquote>
+          <div class="col-xs-12 col-sm-3">
+            <div class="testimonial">
+             <%= cl_image_tag("denis_b_qbrsxa.jpg", :width=>100, :height=>100, :crop=>:fill, :gravity=>:face, :effect=>"auto_color", class:"img-circle") %>
+              <div class="testimonial-description">
+                <blockquote>
+                  <p>Man vs Caravan changed my life</p>
+                  <footer>Denis B.</footer>
+                </blockquote>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-3">
-        <div class="testimonial">
-         <%= cl_image_tag("denis_b_qbrsxa.jpg", :width=>100, :height=>100, :crop=>:fill, :gravity=>:face, :effect=>"auto_color", class:"img-circle") %>
-          <div class="testimonial-description">
-            <blockquote>
-              <p>Man vs Caravan changed my life</p>
-              <footer>Denis B.</footer>
-            </blockquote>
+          <div class="col-xs-12 col-sm-3">
+            <div class="testimonial">
+             <%= cl_image_tag("bear_grylls_emyrwb.jpg", :width=>100, :height=>100, :crop=>:fill, :gravity=>:face, :effect=>"auto_color", class:"img-circle") %>
+              <div class="testimonial-description">
+                <blockquote>
+                  <p>Nothing equals a caravan vacation</p>
+                  <footer>Bear G.</footer>
+                </blockquote>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-3">
-        <div class="testimonial">
-         <%= cl_image_tag("bear_grylls_emyrwb.jpg", :width=>100, :height=>100, :crop=>:fill, :gravity=>:face, :effect=>"auto_color", class:"img-circle") %>
-          <div class="testimonial-description">
-            <blockquote>
-              <p>Nothing equals a caravan vacation</p>
-              <footer>Bear G.</footer>
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div>
-
     </div>
   </div>
 </div>
