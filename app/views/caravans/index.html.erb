@@ -1,26 +1,45 @@
 <h1>Caravans</h1>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-6">
-        <p> Résultats en fonction des recherches en page home </p>
-      </div>
-      <div class="col-md-6">
-        <div id="map" style="width: 100%; height: 400px;"></div>
-         <% content_for(:after_js) do %>
-          <%= javascript_tag do %>
-            $(document).on('ready', function() {
-              handler = Gmaps.build('Google');
-              handler.buildMap({ internal: { id: 'map' } }, function(){
-                markers = handler.addMarkers(<%= raw @markers.to_json %>);
-                handler.bounds.extendWith(markers);
-                handler.fitMapToBounds();
-              });
-            })
-          <% end %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+     <div class="container">
+      <% @caravans.each_slice(2) do |caravans| %>
+      <div class="row">
+       <% caravans.each do |caravan| %>
+       <div class="col-sm-3">
+        <div class="card">
+          <%= cl_image_tag caravan.photo, :height=>222, :crop=>:thumb, class: "card-image" %>
+          <div class="card-price inline"><%= caravan.price.to_s + "€" %></div>
+          <div class="card-description">
+            <h3><%= caravan.title %></h3>
+            <p><%= caravan.city %></p>
+          </div>
+          <%= cl_image_tag caravan.user.photo, :radius=>"max", :width=>50, :height=>50, :crop=>:thumb, :gravity=>:face, class: "card-user avatar-large" %>
+          <%= link_to caravan.title, caravan_path(caravan), class: "card-link" %>
+        </div>
+        </div>
         <% end %>
+      </div>
+      <% end %>
     </div>
   </div>
-  <div class="row button-back">
-    <%= link_to "Nouvelle recherche", pages_home_path, class:"btn btn-primary" %>
-  </div>
+  <div class="col-sm-6">
+    <div id="map" style="width: 100%; height: 600px;"></div>
+    <% content_for(:after_js) do %>
+    <%= javascript_tag do %>
+    $(document).on('ready', function() {
+    handler = Gmaps.build('Google');
+    handler.buildMap({ internal: { id: 'map' } }, function(){
+    markers = handler.addMarkers(<%= raw @markers.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+})
+<% end %>
+<% end %>
+</div>
+</div>
+<div class="button-back">
+  <%= link_to "Nouvelle recherche", pages_home_path, class:"btn btn-primary" %>
+</div>
 </div>
