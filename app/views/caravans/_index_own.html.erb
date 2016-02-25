@@ -1,0 +1,18 @@
+ <div class="container ">
+  <% @caravans.each_slice(3) do |caravans| %>
+    <div class="row">
+     <% caravans.each do |caravan| %>
+      <div class="col-xs-12 col-md-4">
+        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= caravan.photo %>');background-size: cover;">
+          <div class="card-category"></div>
+          <div class="card-description">
+            <h2><%= caravan.description %> </h2>
+          </div>
+          <%= link_to "", user_own_caravan_path(@user,caravan), class: "card-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+

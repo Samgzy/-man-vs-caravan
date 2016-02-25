@@ -3,6 +3,9 @@ class UsersController < ApplicationController
   before_action :set_user
 
   def show
+    @caravans = current_user.caravans.all
+    @rentals = current_user.rentals.all
+    @caravan = Caravan.new
   end
 
   def new
