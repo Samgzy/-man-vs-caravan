@@ -1,0 +1,15 @@
+<h3><%= @caravan.title  %> <span class="label label-default"><%= @caravan.price %> €</span></h3>
+  <%= @caravan.capacity %>
+  <%= @caravan.description %>
+  <%= @caravan.street %>
+  <%= @caravan.city %>
+  <%= @caravan.zip_code %>
+  <%= @caravan.country %>
+  <%= @caravan.tv %>
+  <%= @caravan.wifi %>
+  <%= @caravan.shower %>
+  <%= @caravan.coffee_machine %>
+  <%= @caravan.kitchen %>
+  <%= cl_image_tag @caravan.photo, :width=>300, :height=>300, :crop=>:fill %>
+
+<%= link_to "Rent it", new_caravan_rental_path(@caravan) %>
