@@ -17,6 +17,9 @@ class RentalsController < ApplicationController
     @rental = @caravan.rentals.new(rental_params)
     @rental.user = current_user
     @rental.save
+    @nb_of_days = (@rental.end_date - @rental.start_date)
+    @rental.price = (@rental.price * @nb_of_days)
+    @rental.save
     if @rental.save
       redirect_to user_rental_path(current_user, @rental)
     else

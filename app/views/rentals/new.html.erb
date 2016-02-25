@@ -1,8 +1,8 @@
   <%= simple_form_for [@caravan, @rental] do |f| %>
-    <%= f.input :price, as: :hidden %>
+    <%= f.input :price, as: :hidden, input_html: { value: @caravan.price } %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
-    <%= f.input :validated, as: :hidden, value: false %>
+    <%= f.input :validated, as: :hidden, input_html: { value: false } %>
     <%= f.association :caravan, as: :hidden %>
     <%= f.button :submit, "Submit booking request", class: "btn" %>
   <% end %>
