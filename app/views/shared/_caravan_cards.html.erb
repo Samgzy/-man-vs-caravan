@@ -5,6 +5,6 @@
     <h3><%= caravan.title %></h3>
     <p><%= caravan.city %></p>
   </div>
-  <%= cl_image_tag caravan.user.photo, :radius=>"max", :width=>30, :height=>30, :crop=>:thumb, :gravity=>:face, class: "card-user avatar" %>
+  <%= cl_image_tag caravan.user.photo, :radius=>"max", :width=>50, :height=>50, :crop=>:thumb, :gravity=>:face, class: "card-user avatar-large" %>
   <%= link_to caravan_path(caravan), class: "card-link" %>
 </div>
