@@ -9,6 +9,9 @@ class RentalsController < ApplicationController
   def show
   end
 
+  def index_own
+  end
+
   def new
     @rental = Rental.new
   end
