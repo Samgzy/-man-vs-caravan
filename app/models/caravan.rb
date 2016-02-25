@@ -8,4 +8,17 @@ class Caravan < ActiveRecord::Base
   validates :tv, :shower, :coffee_machine, :kitchen, :wifi, inclusion: { in: [true, false] }
 
   mount_uploader :photo, PhotoUploader
+
+  geocoded_by :address
+
+  def address
+    [street, city, zip_code, country].compact.join(', ')
+  end
+
+  after_validation :geocode, if: :address_changed?
+
+  def address_changed?
+    street_changed? || city_changed? || country_changed? || zip_code_changed?
+  end
+
 end

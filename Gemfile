@@ -18,6 +18,7 @@ gem 'devise'
 gem 'cloudinary'
 gem 'carrierwave'
 gem 'country_select'
+gem "geocoder"
 
 group :development, :test do
   gem 'binding_of_caller'
