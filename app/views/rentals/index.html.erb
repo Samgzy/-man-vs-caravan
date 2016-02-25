@@ -1,0 +1,6 @@
+<% @rentals.each do |rental| %>
+  <%= link_to rental.caravan.title, user_rental_path(current_user, rental) %>
+  <%= rental.start_date %>
+  <%= rental.end_date %>
+  <%= rental.price %>
+<% end %>

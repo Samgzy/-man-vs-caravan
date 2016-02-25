@@ -2,3 +2,5 @@
 <%= @rental.start_date %>
 <%= @rental.end_date %>
 <%= @rental.caravan.title %>
+
+<%= link_to "All my bookings", user_rentals_path(current_user) %>

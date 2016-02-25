@@ -3,7 +3,7 @@ class RentalsController < ApplicationController
   before_action :set_rental, only: [:show]
 
   def index
-
+    @rentals = current_user.rentals.all
   end
 
   def show
@@ -25,7 +25,8 @@ class RentalsController < ApplicationController
   end
 
   def destroy
-
+    @rental.destroy
+    redirect_to user_rentals_path(current_user)
   end
 
   private
