@@ -11,6 +11,9 @@
   text-decoration: none;
   opacity: 0.8;
 }
+.tabs a:focus {
+  text-decoration: none;
+}
 .tabs h3 {
   font-size: 17px;
   font-weight: bold;

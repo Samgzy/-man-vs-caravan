@@ -1,17 +1,27 @@
 <div class="container padded">
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
+    <div class="col-sm-8 col-sm-offset-2">
       <%= simple_form_for @user do |f| %>
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
-        <%= f.input :description, as: :text %>
-        <%= f.input :street %>
-        <%= f.input :zip_code %>
-        <%= f.input :city %>
-        <%= f.input :country, as: :country %>
-        <%= f.input :gender, collection: [:male, :female] %>
-        <%= f.input :photo %>
-        <%= f.input :photo_cache, as: :hidden %>
+        <div class="panel panel-primary">
+          <div class="panel-heading">About you</div>
+          <div class="panel-body">
+            <%= f.input :first_name %>
+            <%= f.input :last_name %>
+            <%= f.input :gender, collection: [:male, :female] %>
+            <%= f.input :description, as: :text, label: "Write a short description" %>
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
+          </div>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">Your address</div>
+          <div class="panel-body">
+            <%= f.input :street %>
+            <%= f.input :zip_code %>
+            <%= f.input :city %>
+            <%= f.input :country, as: :country %>
+          </div>
+        </div>
         <%= f.button :submit, "Update your profile", class: "btn btn-primary" %>
       <% end %>
     </div>

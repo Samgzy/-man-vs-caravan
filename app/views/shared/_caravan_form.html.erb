@@ -1,33 +1,44 @@
 <div class="container padded">
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
+    <div class="col-sm-8 col-sm-offset-2">
         <%= simple_form_for [@user, @caravan] do |f| %>
-          <%= f.input :title %>
-          <%= f.input :description, as: :text %>
-          <%= f.input :capacity %>
-          <%= f.input :price %>
-          <%= f.input :street %>
-          <%= f.input :city %>
-          <%= f.input :zip_code %>
-          <%= f.input :country, as: :country %>
-          <%= f.input :tv %>
-          <%= f.input :shower %>
-          <%= f.input :coffee_machine %>
-          <%= f.input :kitchen %>
-          <%= f.input :wifi %>
-          <%= f.input :photo %>
-          <%= f.input :photo_cache, as: :hidden %>
+          <div class="panel panel-primary">
+            <div class="panel-heading">About your caravan</div>
+            <div class="panel-body">
+              <%= f.input :title %>
+              <%= f.input :description, as: :text %>
+              <%= f.input :capacity %>
+              <%= f.input :price, label: "Price per day (in €)" %>
+            </div>
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-heading">Your caravan's equipment</div>
+            <div class="panel-body">
+              <%= f.input :tv %>
+              <%= f.input :shower %>
+              <%= f.input :coffee_machine %>
+              <%= f.input :kitchen %>
+              <%= f.input :wifi %>
+            </div>
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-heading">Your caravan's location</div>
+            <div class="panel-body">
+              <%= f.input :street %>
+              <%= f.input :city %>
+              <%= f.input :zip_code %>
+              <%= f.input :country, as: :country %>
+            </div>
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-heading">Add a picture</div>
+            <div class="panel-body">
+              <%= f.input :photo %>
+              <%= f.input :photo_cache, as: :hidden %>
+            </div>
+          </div>
           <%= f.button :submit, "Add your caravan", class: "btn btn-primary" %>
         <% end %>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
