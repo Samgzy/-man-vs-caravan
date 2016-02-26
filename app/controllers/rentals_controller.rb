@@ -1,6 +1,6 @@
 class RentalsController < ApplicationController
   before_action :find_caravan, only: [:new, :create]
-  before_action :set_rental, only: [:show, :destroy]
+  before_action :set_rental, only: [:show, :destroy, :update]
 
   def index
     @rentals = current_user.rentals.all
@@ -29,6 +29,13 @@ class RentalsController < ApplicationController
       render :new
     end
   end
+
+  def update
+    @rental.validated = rental_params[:validated]
+    @rental.save
+    redirect_to user_path(current_user) + "#bookings"
+  end
+
 
   def destroy
     @rental.destroy
