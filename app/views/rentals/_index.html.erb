@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Your bookings</h2>
+  <h2><strong>Your bookings</strong></h2>
   <% if @rentals == [] %>
     <p>You haven't made any bookings yet<p>
   <% else %>
@@ -25,7 +25,7 @@
 </div>
 
 <div class="container">
-  <h2>Bookings placed on my caravans</h2>
+  <h2><strong>Bookings placed on my caravans</strong></h2>
     <% current_user.caravans.each do |caravan| %>
       <% if caravan.rentals == [] %>
       <% else %>
