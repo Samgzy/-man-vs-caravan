@@ -5,4 +5,7 @@ $(function(){
     $('.tab-content').addClass('hidden');
     $($(this).data("target")).removeClass('hidden');
   });
+
+  var hash = window.location.hash;
+  $('.tabs a[data-target="'+hash+'"]').click()
 });
