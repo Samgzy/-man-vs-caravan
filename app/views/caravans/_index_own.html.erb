@@ -1,0 +1,12 @@
+ <div class="container padded">
+  <% @caravans.each_slice(3) do |caravans| %>
+    <div class="row">
+     <% caravans.each do |caravan| %>
+      <div class="col-xs-12 col-md-4">
+        <%= render 'shared/caravan_cards', caravan: caravan %>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+
