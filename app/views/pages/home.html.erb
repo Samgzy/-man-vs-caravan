@@ -1,4 +1,4 @@
-<div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('header.jpg');">
+<div class="banner" style="background: linear-gradient(-225deg, rgba(75,108,183,0.6) 0%, rgba(24,40,72,0.5) 50%), url('header.jpg');">
     <%= render 'shared/navbar_home' %>
     <div class="banner-content">
       <h1>Man versus Caravan</h1>
@@ -9,13 +9,13 @@
 
 <div class="wrapper padded">
   <div class="text-center" id="search-form">
-    <h2>Find a caravan</h2>
+    <h2><strong>Find a caravan</strong></h2>
       <%= render 'shared/search_form' %>
   </div>
 <div class="wrapper darker-grey padded">
   <% if @sample_caravans.count >= 1 %>
     <div class="text-center">
-      <h2>Meet some of our caravans</h2>
+      <h2><strong>Meet some of our caravans</strong></h2>
       <div class="container">
         <div class="row">
           <% @sample_caravans.each do |caravan| %>
@@ -31,7 +31,8 @@
 
 <div class="wrapper padded">
   <div class="text-center">
-    <h2>Here's why people love us</h2>
+    <h3><strong>Here's why people love us</strong></h3>
+      <br>
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-3">
