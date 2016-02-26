@@ -1,3 +1,24 @@
 // Place all the styles related to the Rentals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.booking-card {
+  background-color: white;
+  margin-bottom: 20px;
+  .booking-card-header {
+    width: 100%;
+    background-color: $brand-primary;
+    h3 {
+      margin-top: 5px;
+    }
+    h3 a {
+    text-decoration: none;
+    color: white;
+    margin-bottom: 5px;
+    padding-left: 5px
+
+    }
+  }
+  .booking-card-content {
+    padding: 5px;
+  }
+}
