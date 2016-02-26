@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>Your bookings</h2>
+  <% if @rentals == [] %>
+    <p>You haven't made any bookings yet<p>
+  <% else %>
+    <div class="row">
+      <div class="col-sm-3">
+        <% @rentals.each do |rental| %>
+          <h3><%= link_to rental.caravan.title, caravan_path(rental.caravan) %></h3>
+          <p><%= "From: #{rental.start_date}, To: #{rental.end_date}" %></p>
+          <p><%= "Overall price: #{rental.price}€" %></p>
+          <%= link_to "Cancel my reservation", rental_path(rental), method: :delete %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="container">
+  <h2>Bookings placed on my caravans</h2>
+    <% current_user.caravans.each do |caravan| %>
+      <% if caravan.rentals == [] %>
+        <p>No bookings have been placed on your caravans yet<p>
+      <% else %>
+        <div class="row">
+          <% caravan.rentals.each do |rental| %>
+            <div class="col-sm-3">
+              <h3><%= link_to rental.caravan.title, caravan_path(rental.caravan) %></h3>
+              <p><%= "Booking made by: #{rental.user.first_name} #{rental.user.last_name}" %></p>
+              <p><%= "From: #{rental.start_date}, To: #{rental.end_date}" %></p>
+              <p><%= "Overall price: #{rental.price}€" %></p>
+            </div>
+        <% end %>
+        </div>
+      <% end %>
+    <% end %>
+</div>
