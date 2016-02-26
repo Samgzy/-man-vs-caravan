@@ -1,9 +1,11 @@
-<div class="form-inline">
-  <%= simple_form_for :search, url: caravans_path, method: :get do |f| %>
-    <%= f.input :address, label: false, placeholder: "Where ?" %>
-    <%= f.input :radius, collection: [50, 100, 150], selected: 50, label: false %>
-    <%= f.input :start_date, as: :string, input_html: {type: :date}, label: "FROM " %>
-    <%= f.input :end_date, as: :string, input_html: {type: :date}, label: " TO " %>
-    <%= f.button :submit, "Search", class:"btn btn-primary" %>
-  <% end %>
+<div class="container form-background" style="max-width: 900px; border-radius: 3px;">
+  <div class="form-inline form-home">
+    <%= simple_form_for :search, url: caravans_path, method: :get do |f| %>
+      <%= f.input :address, label: false, placeholder: "Where ?" %>
+      <%= f.input :radius, collection: [50, 100, 150], selected: 50, label: false %>
+      <%= f.input :start_date, as: :string, input_html: {type: :date}, label: "FROM " %>
+      <%= f.input :end_date, as: :string, input_html: {type: :date}, label: " TO " %>
+      <%= f.button :submit, "Search", class:"btn btn-warning" %>
+    <% end %>
+  </div>
 </div>
