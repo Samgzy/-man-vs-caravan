@@ -7,16 +7,23 @@
       <% @rentals.each do |rental| %>
         <div class="col-sm-4">
           <div class="booking-card">
-            <div class="booking-card-header">
-              <h3><%= link_to rental.caravan.title, caravan_path(rental.caravan) %></h3>
+            <div id="card-blur" class="<%= "validation-pending" unless rental.validated %>">
+              <div class="booking-card-header">
+                <h3><%= link_to rental.caravan.title, caravan_path(rental.caravan) %></h3>
+              </div>
+              <div class="booking-card-content">
+                <p><strong>Booking made by: </strong><%= "#{rental.user.first_name} #{rental.user.last_name}" %></p>
+                <p><strong>From: </strong><%= "#{rental.start_date}" %></p>
+                <p><strong>To: </strong><%= "#{rental.end_date}" %></p>
+                <p><strong>Overall price: </strong><%= "#{rental.price}€" %></p>
+                <%= link_to "Cancel my reservation", rental_path(rental), method: :delete, class: "btn btn-danger" %>
+              </div>
             </div>
-            <div class="booking-card-content">
-              <p><strong>Booking made by: </strong><%= "#{rental.user.first_name} #{rental.user.last_name}" %></p>
-              <p><strong>From: </strong><%= "#{rental.start_date}" %></p>
-              <p><strong>To: </strong><%= "#{rental.end_date}" %></p>
-              <p><strong>Overall price: </strong><%= "#{rental.price}€" %></p>
-              <%= link_to "Cancel my reservation", rental_path(rental), method: :delete, class: "btn btn-danger" %>
-            </div>
+             <% if rental.validated == false %>
+                <div class="validation-status text-center">
+                  <h3><strong>Validation pending</strong></h3>
+                </div>
+            <% end %>
           </div>
         </div>
       <% end %>
@@ -41,6 +48,14 @@
                   <p><strong>From: </strong><%= "#{rental.start_date}" %></p>
                   <p><strong>To: </strong><%= "#{rental.end_date}" %></p>
                   <p><strong>Overall price: </strong><%= "#{rental.price}€" %></p>
+                  <% if rental.validated == false %>
+                    <%= simple_form_for rental do |f| %>
+                      <%= f.input :validated, as: :hidden, input_html: { value: true } %>
+                      <%= f.button :submit, "Validate", class: "btn btn-success" %>
+                    <% end %>
+                  <% else %>
+                    <i class="fa fa-check-square-o">  Validated</i>
+                  <% end %>
                 </div>
               </div>
             </div>
