@@ -32,7 +32,7 @@ class RentalsController < ApplicationController
 
   def destroy
     @rental.destroy
-    redirect_to user_rentals_path(current_user)
+    redirect_to user_path(current_user) + "#bookings"
   end
 
   private
