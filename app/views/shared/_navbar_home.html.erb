@@ -29,7 +29,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to  user_own_caravans_path(current_user) do %>
+              <%= link_to root_path do %>
                 <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
               <% end %>
             </li>
@@ -62,7 +62,7 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <% if user_signed_in? %>
           <li><%= link_to "Profile", current_user %></li>
-          <li><%= link_to "Home", user_own_caravans_path(current_user) %></li>
+          <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path %></li>
         <% else %>
           <li><%= link_to "Sign up", new_user_registration_path %></li>

@@ -1,21 +1,19 @@
-<div class="navbar-wagon navbar-wagon-home">
+<div class="navbar-wagon navbar-wagon-home navbar-top">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+  <%= link_to root_path, class: "navbar-wagon-brand navbar-wagon-brand-home" do %>
     <%= render 'shared/logo' %>
   <% end %>
+   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <%= render 'shared/form_navbar' %>
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 
       <!-- Notification -->
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-        <div class="badge-container">
-          <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-blue">3</div>
-        </div>
+
       <% end %>
 
       <!-- Profile picture and dropdown -->
@@ -29,7 +27,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to  user_own_caravans_path(current_user) do %>
+              <%= link_to  root_path do %>
                 <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
               <% end %>
             </li>
@@ -62,7 +60,7 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <% if user_signed_in? %>
           <li><%= link_to "Profile", current_user %></li>
-          <li><%= link_to "Home", user_own_caravans_path(current_user) %></li>
+          <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path %></li>
         <% else %>
           <li><%= link_to "Sign up", new_user_registration_path %></li>

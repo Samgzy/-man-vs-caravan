@@ -1,7 +1,7 @@
 <div class="form-inline">
   <%= simple_form_for :search, url: caravans_path, method: :get do |f| %>
-    <%= f.input :address, label: false, placeholder: "Where do you go?", input_html: { value: @search } %>
-    <%= f.input :radius, collection: [50, 100, 150], selected: 50, label: false, input_html: { value: @radius } %>
+    <%= f.input :address, label: false, placeholder: "Where are you going?", input_html: { value: @search } %>
+    <%= f.input :radius, collection: [50, 100, 150], selected: 50, label: false, input_html: { value: @radius  } %>
     <%= f.button :submit, "GO !", class:"btn btn-primary" %>
   <% end %>
 </div>
