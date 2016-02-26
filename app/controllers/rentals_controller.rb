@@ -24,7 +24,7 @@ class RentalsController < ApplicationController
     @rental.price = (@rental.price * @nb_of_days)
     @rental.save
     if @rental.save
-      redirect_to user_rental_path(current_user, @rental)
+      redirect_to user_path(current_user) + "#bookings"
     else
       render :new
     end
