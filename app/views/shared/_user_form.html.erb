@@ -1,13 +1,19 @@
-<%= simple_form_for @user do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :description, as: :text %>
-  <%= f.input :street %>
-  <%= f.input :zip_code %>
-  <%= f.input :city %>
-  <%= f.input :country, as: :country %>
-  <%= f.input :gender, collection: [:male, :female] %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container padded">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= simple_form_for @user do |f| %>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :description, as: :text %>
+        <%= f.input :street %>
+        <%= f.input :zip_code %>
+        <%= f.input :city %>
+        <%= f.input :country, as: :country %>
+        <%= f.input :gender, collection: [:male, :female] %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.button :submit, "Update your profile", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
