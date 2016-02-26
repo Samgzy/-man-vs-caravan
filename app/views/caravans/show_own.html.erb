@@ -34,15 +34,24 @@
     </div>
     <div class="panel panel-primary">
       <div class="panel-heading">Caravan location</div>
-      <div class="panel-body">
-        <%= @caravan.street %>
-        <%= @caravan.city %>
-        <%= @caravan.zip_code %>
-        <%= @caravan.country %>
-      </div>
+        <div class="container" style="margin: 5px 0;">
+          <div class="row">
+           <div class="col-sm-5">
+            <div class="panel-body">
+              <%= @caravan.street %>
+              <%= @caravan.city %>
+              <%= @caravan.zip_code %>
+              <%= @caravan.country %>
+            </div>
+          </div>
+          <div class="col-sm-7">
+           <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=550x300&sensor=false&maptype=roadmap&markers=color:red|#{@caravan.address}" %>
+         </div>
+         </div>
+        </div>
+        </div>
     </div>
-
-  <div class="text-center">
+  <div class="text-center" style="margin-bottom: 25px;">
     <%= link_to "Edit information", edit_user_caravan_path(@user, @caravan), class: "btn btn-primary" %>
     <%= link_to "Back to profile", user_path(@user), class: "btn btn-primary" %>
   </div>
