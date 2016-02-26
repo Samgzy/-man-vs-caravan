@@ -4,7 +4,7 @@
     <div class="col-sm-6">
      <div class="container">
       <% @caravans.each_slice(2) do |caravans| %>
-      <div class="row">
+      <div class="row" style="margin-bottom: 30px;">
        <% caravans.each do |caravan| %>
        <div class="col-sm-3">
         <div class="card">
@@ -14,7 +14,7 @@
             <h3><%= caravan.title %></h3>
             <p><%= caravan.city %></p>
           </div>
-          <%= cl_image_tag caravan.user.photo, :radius=>"max", :width=>50, :height=>50, :crop=>:thumb, :gravity=>:face, class: "card-user avatar-large" %>
+          <%= cl_image_tag caravan.user.photo, :radius=>"max", :width=>50, :height=>50, :crop=>:thumb, :gravity=>:face, class: "card-search avatar-large" %>
           <%= link_to caravan.title, caravan_path(caravan), class: "card-link" %>
         </div>
         </div>
