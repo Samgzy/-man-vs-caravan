@@ -1,11 +1,11 @@
 <div class="caravan-banner" style="background: url('<%= @caravan.photo %>');">
-    <div class="caravan-rent">
+  <div class="caravan-rent">
 
-      <button data-toggle="modal" data-target="#new-rental" class="btn btn-danger">Book it</button>
-    </div>
-    <div class="caravan-banner-content">
-      <h3><%= @caravan.title  %> <span class="label label-default"><%= @caravan.price %> €</span></h3>
-    </div>
+    <button data-toggle="modal" data-target="#new-rental" class="btn btn-danger">Book it</button>
+  </div>
+  <div class="caravan-banner-content">
+    <h3><%= @caravan.title  %> <span class="label label-default"><%= @caravan.price %> €</span></h3>
+  </div>
 </div>
 
 <div class="container padded">
@@ -16,35 +16,56 @@
       <%= @caravan.capacity %>
     </div>
   </div>
-    <div class="panel panel-primary">
-      <div class="panel-heading">Caravan equipment</div>
-      <div class="panel-body">
-        <% if @caravan.tv %>
-          <i class="fa fa-television">   TV included</i>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Caravan equipment</div>
+    <div class="panel-body">
+    <div class="list-equipment">
+      <ul class="list-inline">
+       <li> <% if @caravan.tv %>
+        <i class="fa fa-television">   TV included</i>
         <% end %>
+      </li>
+      <li>
         <% if @caravan.wifi %>
-          <i class="fa fa-wifi">   Wifi included</i>
+        <i class="fa fa-wifi">   Wifi included</i>
         <% end %>
+       </li>
+       <li>
         <% if @caravan.shower %>
-          <i class="fa fa-cloud">   Shower included</i>
+        <i class="fa fa-cloud">   Shower included</i>
         <% end %>
+       </li>
+       <li>
         <% if @caravan.coffee_machine %>
-          <i class="fa fa-coffee">   Coffee machine included</i>
+        <i class="fa fa-coffee">   Coffee machine included</i>
         <% end %>
+       </li>
+       <li>
         <% if @caravan.kitchen %>
-          <i class="fa fa-spoon">   Kitchen included</i>
+        <i class="fa fa-spoon">   Kitchen included</i>
         <% end %>
+       </li>
+      </ul>
       </div>
     </div>
-    <div class="panel panel-primary">
-      <div class="panel-heading">Caravan location</div>
-      <div class="panel-body">
-        <%= @caravan.street %>
-        <%= @caravan.city %>
-        <%= @caravan.zip_code %>
-        <%= @caravan.country %>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Caravan location</div>
+    <div class="container" style="margin: 5px 0;">
+      <div class="row">
+       <div class="col-sm-5">
+        <div class="panel-body">
+          <%= @caravan.street %>
+          <%= @caravan.city %>
+          <%= @caravan.zip_code %>
+          <%= @caravan.country %>
+        </div>
       </div>
-    </div>
+      <div class="col-sm-7">
+       <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=550x300&sensor=false&maptype=roadmap&markers=color:red|#{@caravan.address}" %>
+     </div>
+   </div>
+ </div>
 </div>
 
 
