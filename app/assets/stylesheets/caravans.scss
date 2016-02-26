@@ -1,3 +1,27 @@
 // Place all the styles related to the Caravans controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.caravan-banner {
+  color: white;
+  text-align: center;
+  height: 90vh;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  .caravan-banner-content {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    text-align: right;
+    padding-right: 40px;
+  }
+  .caravan-rent {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+  }
+}

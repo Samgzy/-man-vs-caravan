@@ -23,6 +23,7 @@ class CaravansController < ApplicationController
   end
 
   def show
+    @rental = Rental.new
   end
 
   def show_own

@@ -1,15 +1,63 @@
-<h3><%= @caravan.title  %> <span class="label label-default"><%= @caravan.price %> €</span></h3>
-  <%= @caravan.capacity %>
-  <%= @caravan.description %>
-  <%= @caravan.street %>
-  <%= @caravan.city %>
-  <%= @caravan.zip_code %>
-  <%= @caravan.country %>
-  <%= @caravan.tv %>
-  <%= @caravan.wifi %>
-  <%= @caravan.shower %>
-  <%= @caravan.coffee_machine %>
-  <%= @caravan.kitchen %>
-  <%= cl_image_tag @caravan.photo, :width=>300, :height=>300, :crop=>:fill %>
+<div class="caravan-banner" style="background: url('<%= @caravan.photo %>');">
+    <div class="caravan-rent">
+      <%= link_to "Rent it", new_caravan_rental_path(@caravan), class: "btn btn-danger" %>
+    </div>
+    <div class="caravan-banner-content">
+      <h3><%= @caravan.title  %> <span class="label label-default"><%= @caravan.price %> €</span></h3>
+    </div>
+</div>
 
-<%= link_to "Rent it", new_caravan_rental_path(@caravan) %>
+<div class="container padded">
+  <div class="panel panel-primary">
+    <div class="panel-heading">About the caravan</div>
+    <div class="panel-body">
+      <%= @caravan.description %>
+      <%= @caravan.capacity %>
+    </div>
+  </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">Caravan equipment</div>
+      <div class="panel-body">
+        <% if @caravan.tv %>
+          <i class="fa fa-television">   TV included</i>
+        <% end %>
+        <% if @caravan.wifi %>
+          <i class="fa fa-wifi">   Wifi included</i>
+        <% end %>
+        <% if @caravan.shower %>
+          <i class="fa fa-cloud">   Shower included</i>
+        <% end %>
+        <% if @caravan.coffee_machine %>
+          <i class="fa fa-coffee">   Coffee machine included</i>
+        <% end %>
+        <% if @caravan.kitchen %>
+          <i class="fa fa-spoon">   Kitchen included</i>
+        <% end %>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">Caravan location</div>
+      <div class="panel-body">
+        <%= @caravan.street %>
+        <%= @caravan.city %>
+        <%= @caravan.zip_code %>
+        <%= @caravan.country %>
+      </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Submit your booking request</h4>
+      </div>
+      <div class="modal-body">
+        <%= render "rentals/new", caravan: @caravan, rental: @rental %>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
